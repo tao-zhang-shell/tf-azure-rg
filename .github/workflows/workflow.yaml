@@ -1,0 +1,22 @@
+name: 'Test workflow'
+
+on:
+  push:
+    branches:
+    - main
+
+# env:
+#   ENV_TEST: 'This is test'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    environment: test
+    env:
+      ENV_TEST: ${{ vars.ENV_TEST }}
+    steps:
+      - name: test
+        uses: azure/CLI@v1
+        with:
+          inlineScript: |
+            env
