@@ -1,7 +1,9 @@
 variable "name" {
-  type = string
+  type    = string
+  default = "test-rg"
 }
 
 variable "location" {
-  type = string
+  type    = string
+  default = "westeurope"
 }
